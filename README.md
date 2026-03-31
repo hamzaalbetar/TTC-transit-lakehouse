@@ -1,5 +1,6 @@
-#🚍 Transit Lakehouse Project (GTFS)
-##📌 Overview
+# 🚍 Transit Lakehouse Project (GTFS)
+
+## 📌 Overview
 
 This project implements a modern data engineering pipeline using a Lakehouse architecture to process and analyze public transit data based on the GTFS standard.
 
@@ -8,11 +9,11 @@ The pipeline ingests raw transit data, transforms it through multiple layers, an
 ##Dataset used:
 Toronto Transit Commission
 
-##🏗️ Architecture
+## 🏗️ Architecture
 
 The project follows a Medallion Architecture:
 
-###🟤 Bronze Layer
+### 🟤 Bronze Layer
 
 Raw ingestion of GTFS data
 
@@ -21,7 +22,7 @@ No transformations applied
 Data stored as-is (mostly strings)
 
 
-###⚪ Silver Layer
+### ⚪ Silver Layer
 Data cleaning and standardization
 
 Schema enforcement (casting data types)
@@ -29,7 +30,7 @@ Schema enforcement (casting data types)
 Handling inconsistencies (e.g., time formats, coordinates)
 
 
-###🟡 Gold Layer
+### 🟡 Gold Layer
 Business-ready data model
 
 Star Schema implementation
@@ -37,9 +38,9 @@ Star Schema implementation
 Optimized for analytical queries
 
 
-##⭐ Data Model (Star Schema)
-###🟦 Dimensions
-####dim_routes
+## ⭐ Data Model (Star Schema)
+### 🟦 Dimensions
+#### dim_routes
 route_id (PK)
 
 route_short_name
@@ -51,7 +52,7 @@ route_type
 route_type_desc
 
 
-####dim_stops
+#### dim_stops
 stop_id (PK)
 
 stop_name
@@ -65,7 +66,7 @@ wheelchair_boarding
 wheelchair_access_desc
 
 
-####dim_trips
+#### dim_trips
 trip_id (PK)
 
 route_id (FK)
@@ -83,7 +84,7 @@ route_type
 route_type_desc
 
 
-####dim_service
+#### dim_service
 service_id (PK)
 
 monday → sunday
@@ -93,7 +94,7 @@ start_date
 end_date
 
 
-###🟥 Fact Table
+### 🟥 Fact Table
 ####fact_stop_times
 trip_id (FK)
 
@@ -106,7 +107,7 @@ arrival_time
 departure_time
 
 
-##🧰 Technologies Used
+## 🧰 Technologies Used
 PySpark
 
 Databricks (Community Edition)
@@ -116,7 +117,7 @@ Delta Lake
 Git & GitHub
 
 
-##📊 Key Capabilities
+## 📊 Key Capabilities
 Trip-level and stop-level analysis
 
 Route performance insights
@@ -126,7 +127,7 @@ Temporal analysis using standardized time metrics
 Accessibility analysis (wheelchair support)
 
 
-##🚀 Future Improvements
+## 🚀 Future Improvements
 Integrate calendar_dates for service exception handling
 
 Build analytical dashboards (Power BI / Tableau)
@@ -136,7 +137,7 @@ Add real-time or streaming data support
 Implement data quality checks and validation rules
 
 
-##🧠 Notes
+## 🧠 Notes
 
 This project focuses on building a clean and scalable analytical model rather than only data transformation, demonstrating core data engineering concepts including:
 
