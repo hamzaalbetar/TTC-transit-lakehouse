@@ -95,7 +95,7 @@ end_date
 
 
 ### 🟥 Fact Table
-####fact_stop_times
+#### fact_stop_times
 trip_id (FK)
 
 stop_id (FK)
